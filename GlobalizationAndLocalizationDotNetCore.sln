@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalizationAndLocalizationDotNetCore", "GlobalizationAndLocalizationDotNetCore\GlobalizationAndLocalizationDotNetCore.csproj", "{563F29C5-501D-4D77-98D4-85DCC0CE8EBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalisationAndLocalisationDotNetCore", "GlobalizationAndLocalizationDotNetCore\GlobalisationAndLocalisationDotNetCore.csproj", "{563F29C5-501D-4D77-98D4-85DCC0CE8EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalisationAndLocalisationResources", "GlobalisationAndLocalisationResources\GlobalisationAndLocalisationResources.csproj", "{1D995FBB-F624-4A1E-B500-F06DA7BDE093}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{563F29C5-501D-4D77-98D4-85DCC0CE8EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{563F29C5-501D-4D77-98D4-85DCC0CE8EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{563F29C5-501D-4D77-98D4-85DCC0CE8EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D995FBB-F624-4A1E-B500-F06DA7BDE093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D995FBB-F624-4A1E-B500-F06DA7BDE093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D995FBB-F624-4A1E-B500-F06DA7BDE093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D995FBB-F624-4A1E-B500-F06DA7BDE093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,75 @@
+﻿
+@using System.Reflection
+@using GlobalisationAndLocalisationDotNetCore
+@using GlobalisationAndLocalisationDotNetCore.Controllers
+@using GlobalisationAndLocalisationDotNetCore.ViewModels
+@using GlobalisationAndLocalisationDotNetCore.ViewModels.Info
+@using GlobalisationAndLocalisationResources
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+
+@model GlobalisationAndLocalisationDotNetCore.ViewModels.Info.InfoViewModel
+
+@inject  IViewLocalizer Localizer
+@inject  IStringLocalizer<InfoViewModel> LocalizerVm
+@inject IHtmlLocalizer<LocalResources> SharedLocalizer
+
+@{
+    ViewData["Title"] = Localizer["About"];
+}
+
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>@Localizer["Use this area to provide additional information."]</p>
+
+
+<p>The default implementation of IViewLocalizer finds the resource file based on the view's file name. 
+    There is no option to use a global shared resource file. ViewLocalizer implements the localizer using 
+    IHtmlLocalizer, so Razor doesn't HTML encode the localized string. You can parameterize resource strings 
+    and IViewLocalizer will HTML encode the parameters, but not the resource string. Consider the following Razor
+    markup:</p>
+
+<h1>@SharedLocalizer["Hello"]!</h1>
+
+<ul>
+    <li>@Html.LabelFor((m => m.Email))
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+    </li>
+    <li>@Html.LabelFor((m => m.Message))
+        @Html.TextBoxFor(m => m.Message)
+        @Html.ValidationMessageFor(m => m.Message)
+    </li>
+    <li>@Html.LabelFor((m => m.Title))
+        @Html.TextBoxFor(m => m.Title)
+        @Html.ValidationMessageFor(m => m.Title)
+    </li>
+</ul>
+
+
+<form asp-controller="Info" asp-action="Index" method="post" class="form-horizontal" role="form">
+    <h4>@Localizer["Test Data Annotations."]</h4>
+    <hr />
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Email" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Message" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Message" class="form-control" />
+            <span asp-validation-for="Message" class="text-danger"></span>
+        </div>
+    </div>
+ 
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-default">@Localizer["Register"]</button>
+        </div>
+    </div>
+</form>

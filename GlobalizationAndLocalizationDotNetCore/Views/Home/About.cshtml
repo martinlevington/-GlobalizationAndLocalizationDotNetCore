@@ -1,7 +1,18 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Localization
+@{
     ViewData["Title"] = "About";
+}
+
+
+@{
+
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
 <p>Use this area to provide additional information.</p>
+
+<p>Current Culture: @requestCulture.RequestCulture.Culture.Name</p>
+<p>Current CultureUI: @requestCulture.RequestCulture.UICulture.Name</p>
